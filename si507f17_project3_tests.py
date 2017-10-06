@@ -11,10 +11,10 @@ from si507f17_project3_code import *
 
 class Part1(unittest.TestCase):
     def setUp(self):
-        self.mainpage = open("nps_gov_data.html")
-        self.akfile = open("arkansas_data.html")
-        self.cafile = open("california_data.html")
-        self.mifile = open("michigan_data.html")
+        self.mainpage = open("nps_gov_data.html", encoding='utf8')
+        self.akfile = open("arkansas_data.html", encoding='utf8')
+        self.cafile = open("california_data.html", encoding='utf8')
+        self.mifile = open("michigan_data.html", encoding='utf8')
 
     def test_files_exist(self):
         self.assertTrue(self.mainpage.read())
