@@ -59,7 +59,7 @@ class NationalSite:
 
     def get_mailing_address(self):
         link = self.soup.find_all('a', href=True)[2]['href']
-        park_html = getHTML(link, './cache_parks/{}.html'.format(self.name))
+        park_html = getHTML(link)
         park_soup = BeautifulSoup(park_html, 'html.parser')
         address = park_soup.find('div', itemprop = 'address')
         return ' / '.join([item.strip() for item in address.text.replace(',','\n').split('\n') if item])
